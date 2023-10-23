@@ -1,0 +1,188 @@
+// 用户名密码登录
+.login-content-form {
+	margin-top: 20px;
+
+	@for $i from 1 through 4 {
+		.login-animation#{$i} {
+			opacity: 0;
+			animation-name: error-num;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+			animation-delay: calc($i/10) + s;
+		}
+	}
+
+	.login-content-password {
+		display: inline-block;
+		width: 20px;
+		cursor: pointer;
+
+		&:hover {
+			color: #909399;
+		}
+	}
+
+	.login-content-code {
+		width: 100%;
+		padding: 0;
+		font-weight: bold;
+		letter-spacing: 5px;
+	}
+
+	.login-content-submit {
+		width: 100%;
+		letter-spacing: 2px;
+		font-weight: 300;
+		margin-top: 15px;
+	}
+
+	.login-msg {
+		color: var(--el-text-color-placeholder);
+	}
+}
+
+// 社交登录
+.social-container {
+	margin: 20px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	.box {
+		cursor: pointer;
+	}
+
+	.iconfont {
+		color: #fff;
+		font-size: 30px;
+	}
+
+	.container {
+		$height: 50px;
+		display: inline-block;
+		width: $height;
+		height: $height;
+		line-height: $height;
+		text-align: center;
+		border-radius: 4px;
+		margin-bottom: 10px;
+	}
+
+	.title {
+		text-align: center;
+	}
+}
+.select-none {
+	user-select: none;
+}
+.mini_qr {
+	position: fixed;
+	right: 2rem;
+	bottom: 1rem;
+	padding: 36px;
+	z-index: 1000;
+	img {
+		width: 120px;
+	}
+	p {
+		margin-top: 20px;
+		text-align: center;
+		color: var(--el-text-color-placeholder);
+		font-size: 12px;
+	}
+}
+.wave {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	bottom: 0;
+	z-index: 0;
+}
+.login-container {
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 18rem;
+	padding: 0 2rem;
+}
+
+.img {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.img img {
+	z-index: 0;
+	width: 500px;
+}
+
+.login-title {
+	font-size: 20px;
+	font-weight: 500;
+	font-family: PingFang SC, Arial, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+	margin-bottom: 32px;
+}
+.login-box {
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.login-form {
+	width: 400px;
+}
+
+.avatar {
+	width: 350px;
+	height: 80px;
+}
+
+.login-form h2 {
+	text-transform: uppercase;
+	margin: 15px 0;
+	color: #999;
+	font: bold 200% Consolas, Monaco, monospace;
+}
+
+@media screen and (max-width: 1180px) {
+	.login-container {
+		grid-gap: 4rem;
+	}
+	.login-form {
+		width: 400px;
+	}
+
+	.login-form h2 {
+		font-size: 2.4rem;
+		margin: 8px 0;
+	}
+
+	.img img {
+		width: 360px;
+	}
+
+	.avatar {
+		width: 280px;
+		height: 80px;
+	}
+}
+
+@media screen and (max-width: 968px) {
+	.wave {
+		display: none;
+	}
+
+	.img {
+		display: none;
+	}
+
+	.login-container {
+		grid-template-columns: 1fr;
+	}
+
+	.login-box {
+		justify-content: center;
+	}
+}
