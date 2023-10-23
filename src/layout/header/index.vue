@@ -1,11 +1,25 @@
 <template>
-    <div>头部</div>
+  <el-header p-0>
+    <el-page-header :icon="null" rounded bg-indigo>
+      <logo></logo>
+      <nav-bar></nav-bar>
+      <setting></setting>
+    </el-page-header>
+  </el-header>
 </template>
     
 <script setup lang='ts'>
-import { ref, reactive } from 'vue'
+import { defineAsyncComponent } from "vue";
+
+const Logo = defineAsyncComponent(()=>import("@/layout/header/components/logo.vue"))
+const NavBar = defineAsyncComponent(()=>import("@/layout/header/components/navBar.vue"))
+const  Setting = defineAsyncComponent(()=>import("@/layout/header/components/setting.vue"))
+
 </script>
     
-<style scoped lang='less'>
-
+<style scoped>
+i,
+a {
+  font-size: 2rem;
+}
 </style>

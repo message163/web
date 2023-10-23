@@ -1,0 +1,25 @@
+:root {
+    --primary-color: #316c72;
+    --dark-bg: #18181c;
+  }
+  
+  html {
+    font-size: 4px; /* 方便unocss计算：1单位 = 0.25rem = 1px*/
+  }
+  
+  body {
+    font-size: 16px;
+  }
+  
+  html,
+  body,
+  #app {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html.dark {
+    background: var(--dark-bg);
+  }
+  
